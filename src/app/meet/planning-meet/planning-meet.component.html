@@ -1,0 +1,19 @@
+<app-nav-front></app-nav-front>
+
+<div class="specific-page">
+  <!-- Contenu de la page spécifique -->
+</div>
+
+<div class="container mt-4" #calendarContainer>
+  <full-calendar #calendar [options]="calendarOptions"
+    (eventClick)="handleEventClick($event)"></full-calendar>
+</div>
+
+<!-- Zone pour afficher la notification -->
+<!-- <app-notification [message]="notificationMessage"></app-notification> -->
+
+<!-- Bouton pour télécharger le PDF -->
+<button class="button" (click)="downloadAsPDF()">
+  <span class="one">Download PDF 0%</span>
+  <span class="two">100%</span>
+</button>

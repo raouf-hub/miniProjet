@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/#']">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/showlistmsg']">messages list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/planning']"href="#">planning meet</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+
+
+    <router-outlet></router-outlet>
+
+  </div>

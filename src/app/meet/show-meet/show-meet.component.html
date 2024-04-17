@@ -1,0 +1,109 @@
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    background-color: #f8f9fa;
+    /* Pastel background color */
+  }
+
+  table th {
+    background-color: #A9A9A9;
+    /* Pastel header background color */
+    color: #fff;
+  }
+
+  table button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  table button:hover {
+    background-color: #0056b3;
+  }
+
+  h1 {
+    color: #36454F;
+    /* Light blue text color */
+    text-align: center;
+    /* Center the heading */
+    font-size: 2em;
+    /* Adjust the font size as needed */
+    margin-bottom: 20px;
+    /* Add space below the heading */
+  }
+</style>
+<div>
+  <button class="btn btn-success btn-sm action-button" (click)="addMeet()">
+    <i class="fas fa-info-circle"></i> Add Course
+  </button>
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+
+        <th></th>
+        <th></th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meet of meets">
+        <td>{{ meet.title }}</td>
+        <td>{{ meet.startDate }}</td>
+        <td>{{ meet.endDate }}</td>
+        <td>
+          <button
+          style="background-color: #dc3545; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+          (click)="meet.meetID !== undefined ? deletetmeet(meet.meetID) : null">
+          <i style="margin-right: 5px;" class="fas fa-trash"></i> delete
+        </button>
+
+
+        </td>
+        <td>
+          <button  style="background-color: #007bff; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+            (click)="edittimeet(meet.meetID)">
+            <i style="margin-right: 5px;" class="fas fa-edit"></i> Update
+          </button>
+        </td>
+        <td>
+          <button
+            (click)="showDetails(meet.meetID)" style="background-color: #17a2b8; color: #fff; border: none; padding: 5px 10px; cursor: pointer;">
+            <i style="margin-right: 5px;" class="fas fa-info-circle"></i> Details
+          </button>
+        </td>
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

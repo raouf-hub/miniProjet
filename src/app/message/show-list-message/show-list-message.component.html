@@ -1,0 +1,33 @@
+<app-nav-front></app-nav-front>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <!-- Champ de recherche -->
+      <input type="text" class="form-control mb-3" placeholder="Rechercher..."
+        [(ngModel)]="searchTerm" (input)="filterMessages()">
+
+      <!-- Liste des messages filtrés -->
+      <div *ngFor="let message of filteredMessages" class="card mb-3">
+        <div class="card-header">
+          Message envoyé le {{ message.sentAt | date: 'dd/MM/yyyy HH:mm' }}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ message.content }}</p>
+        </div>
+        <div
+          class="card-footer d-flex justify-content-between align-items-center">
+          <button (click)="likeMessage(message.messageID || 0)"
+            class="btn btn-primary">
+            Like <span class="badge badge-light">{{ message.likes }}</span>
+          </button>
+          <button (click)="dislikeMessage(message.messageID || 0)"
+            class="btn btn-danger">
+            Dislike <span class="badge badge-light">{{ message.dislikes
+              }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
