@@ -5,39 +5,56 @@ import { AppComponent } from './app.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EtudiantService } from './services/etudiant.service';
-import { AddBlocComponent } from './bloc/add-bloc/add-bloc.component';
-import { UpdateBlocComponent } from './bloc/update-bloc/update-bloc.component';
-import { ListeBlocComponent } from './bloc/liste-bloc/liste-bloc.component';
-import { DetailBlocComponent } from './bloc/detail-bloc/detail-bloc.component';
-import { FoyerService } from './services/foyer.service';
-import { ListeFoyerComponent } from './foyer/liste-foyer/liste-foyer.component';
-import { AddFoyerComponent } from './foyer/add-foyer/add-foyer.component';
-import { UpdateFoyerComponent } from './foyer/update-foyer/update-foyer.component';
-import { DetailFoyerComponent } from './foyer/detail-foyer/detail-foyer.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // Assurez-vous d'importer FullCalendarModule depuis @fullcalendar/angular
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
-import { Foyer3dComponent } from './foyer/foyer3d/foyer3d.component';
-import { DashboardEtudiantComponent } from './dashboard-etudiant/dashboard-etudiant.component';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { RouterModule } from '@angular/router';
+import { AddChatComponent } from './chat/add-chat/add-chat.component';
+import { ListChatComponent } from './chat/list-chat/list-chat.component';
+import { UpdateChatComponent } from './chat/update-chat/update-chat.component';
+import { DetailChatComponent } from './chat/detail-chat/detail-chat.component';
+import { ListMessageComponent } from './message/list-message/list-message.component';
+import { AddMessageComponent } from './message/add-message/add-message.component';
+import { UpdateMessageComponent } from './message/update-message/update-message.component';
+import { DetailMessageComponent } from './message/detail-message/detail-message.component';
+import { ShowListMessageComponent } from './message/show-list-message/show-list-message.component';
+import { NavFrontComponent } from './nav-front/nav-front.component';
+import { AddMeetComponent } from './meet/add-meet/add-meet.component';
+import { DetailMeetComponent } from './meet/detail-meet/detail-meet.component';
+import { PlanningMeetComponent } from './meet/planning-meet/planning-meet.component';
+import { ShowMeetComponent } from './meet/show-meet/show-meet.component';
+import { UpdateMeetComponent } from './meet/update-meet/update-meet.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PlanningcoursComponent } from './meet/planningcours/planningcours.component';
+import { NotificationComponent } from './meet/notification/notification.component';
+
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
     NotfoundComponent,
-    ListeFoyerComponent,
-    AddFoyerComponent,
-    UpdateFoyerComponent,
-    DetailFoyerComponent,
-    AddBlocComponent,
-    UpdateBlocComponent,
-    ListeBlocComponent,
-    DetailBlocComponent,
     DashboardComponent,
-    Foyer3dComponent,
-    DashboardEtudiantComponent
-    
+    AddChatComponent,
+    ListChatComponent,
+    UpdateChatComponent,
+    DetailChatComponent,
+    ListMessageComponent,
+    AddMessageComponent,
+    UpdateMessageComponent,
+    DetailMessageComponent,
+    ShowListMessageComponent,
+    NavFrontComponent,
+    AddMeetComponent,
+    DetailMeetComponent,
+    PlanningMeetComponent,
+    ShowMeetComponent,
+    UpdateMeetComponent,
+    PlanningcoursComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,11 +64,15 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-   NgChartsModule,
-   RouterModule,
+    NgChartsModule,
+    RouterModule,
+    FullCalendarModule,
+    MatDialogModule,
+    ScheduleModule,
+    ToastrModule.forRoot(),
    
   ],
-  providers: [EtudiantService, FoyerService],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

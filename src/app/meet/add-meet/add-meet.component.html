@@ -1,0 +1,36 @@
+<!-- add-meet.component.html -->
+
+<form [formGroup]="meetForm" (ngSubmit)="onSubmit()" class="meet-form">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" formControlName="title" id="title" required>
+    <div
+      *ngIf="meetForm.get('title')?.errors?.['required'] && meetForm.get('title')?.touched"
+      class="error-message">
+      title is required </div>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">start date</label>
+    <input type="datetime-local" formControlName="startDate" id="startDate"
+      required>
+    <div
+      *ngIf="meetForm.get('startDate')?.errors?.['required'] && meetForm.get('startDate')?.touched"
+      class="error-message">
+      start date required. </div>
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">End date</label>
+    <input type="datetime-local" formControlName="endDate" id="endDate"
+      required>
+    <div
+      *ngIf="meetForm.get('endDate')?.errors?.['required'] && meetForm.get('endDate')?.touched"
+      class="error-message">
+      End date is required
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!meetForm.valid"
+    class="submit-button">Add Course</button>
+</form>

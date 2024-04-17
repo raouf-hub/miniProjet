@@ -1,0 +1,67 @@
+
+  .button {
+    width: 140px;
+    height: 45px;
+    border-radius: 30em;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+    background: #ff135a;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    transition: 0.6s ease-in;
+    margin-left: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .button:hover {
+    background: #fff;
+  }
+  
+  .button .two {
+    display: none;
+  }
+  
+  .button::before {
+    content: "";
+    width: 0;
+    height: 50px;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+  }
+  
+  .button:hover::before {
+    width: 140px;
+    transition: 3s linear;
+  }
+  
+  .button:hover .one {
+    display: none;
+  }
+  
+  .button:hover .two {
+    display: inline;
+  }
+  .custom-snackbar {
+    background-color: #ff5722; /* Couleur de fond du snackbar */
+    color: white; /* Couleur du texte du snackbar */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    font-size: 16px; /* Taille de police */
+    border-radius: 8px; /* Rayon de bordure */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre de boîte */
+  }
+  
+  
